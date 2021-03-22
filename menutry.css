@@ -1,0 +1,480 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #f2f2f2;
+    font-family: 'Courgette', cursive;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+.bg-img {
+  /* The image used */
+  background-image: url("image/hill2.jpg");
+
+  min-height: 715px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  /* Needed to position the navbar */
+  position: relative;
+}
+
+
+
+
+body{
+    overflow-x: hidden;
+
+
+}
+nav{
+    height: 3rem;
+    width: 100%;
+    background-color: #1314182e;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    position: fixed;
+    z-index: 10;
+
+}
+
+/*Styling logo*/
+.logo{
+    padding:1vh 1vw;
+    text-align: center;
+}
+.logo img {
+    height: 3rem;
+    width: 5rem;
+}
+
+/*Styling Links*/
+.nav-links{
+    display: flex;
+    list-style: none; 
+    width: 88vw;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+
+}
+.nav-links li a{
+    text-decoration: none;
+    margin: 0 0.7vw;
+}
+.nav-links li a:hover {
+    color: #8F4E4C;
+}
+.nav-links li {
+    position: relative;
+}
+/*.nav-links li a::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+    background-color: #61DAFB;
+    position: absolute;
+    transition: all ease-in-out 250ms;
+    margin: 0 0 0 10%;
+}*/
+.nav-links li a:hover::before{
+    width: 80%;
+}
+
+/*Styling Buttons*/
+.login-button{
+    background-color: transparent;
+    border: 1.5px solid #f2f5f7;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    margin-left: 2vw;
+    font-size: 1rem;
+    cursor: pointer;
+
+}
+.login-button:hover {
+    color: #131418;
+    background-color: #8F4E4C;
+    border:1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
+.join-button{
+    color: #f2f2f2;
+    background-color: #82413F;
+    border: 1.5px solid #82413F;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.join-button:hover {
+    color: #82413F;
+    background-color: transparent;
+    border:1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+    font-weight: bold;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div{
+    width: 30px;
+    height:3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.hamburger{
+    display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 800px){
+    nav{
+        position: fixed;
+        z-index: 3;
+    }
+    .hamburger{
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+    .nav-links{
+        position: fixed;
+        background: #131418;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .nav-links.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .nav-links li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4){
+        transition: all 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(5){
+        transition: all 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(6){
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    .nav-links li:nth-child(7){
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+    li.fade{
+        opacity: 1;
+    }
+}
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    transition: all 0.7s ease;
+    width:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: 450px; /* Should be removed. Only for demonstration */
+  padding-top: 100px;
+  margin-left: 270px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column1 {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: 400px; /* Should be removed. Only for demonstration */
+  padding-top: 0px;
+  margin-left: 270px;
+}
+
+/* Clear floats after the columns */
+.row1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+ .footer {
+  width: 100%;
+  position: relative;
+  height: 300px;
+  background-color: #070617;
+}
+.footer .col {
+  width: 370px;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0px  40px ;
+  margin-top: 30px;
+}
+.footer .col h1 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 12px;
+  line-height: 17px;
+  padding: 20px 0px 5px 0px;
+  color: #f2f2f2;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.250em;
+}
+.footer .col ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.footer .col ul li {
+  color: #f2f2f2;
+  font-size: 14px;
+  font-family: 'Berkshire Swash', cursive;
+  font-weight: bold;
+  padding: 5px 0px 5px 0px;
+  cursor: pointer;
+  transition: .2s;
+  -webkit-transition: .2s;
+  -moz-transition: .2s;
+}
+.social ul li {
+  display: inline-block;
+  padding-right: 5px !important;
+}
+
+.footer .col ul li:hover {
+  color: #ffffff;
+  transition: .1s;
+  -webkit-transition: .1s;
+  -moz-transition: .1s;
+}
+
+@media screen and (max-width: 1049px) {
+  .footer{
+  height: 400px;
+  }
+}
+
+@media screen and (max-width: 699px) {
+  .footer{
+  height: 600px;
+  }
+}
+
+@media screen and (max-width: 1049px) {
+  .footer{
+  height: 400px;
+  }
+}
+
+@media screen and (max-width: 1095px) {
+  .column{
+  margin-left: 200px;
+  }
+}
+
+@media screen and (max-width: 1095px) {
+  .column1{
+  margin-left: 200px;
+  }
+}
+
+
+@media screen and (max-width: 839px) {
+  .column{
+  margin-left: 150px;
+  }
+}
+
+@media screen and (max-width: 839px) {
+  .column1{
+  margin-left: 150px;
+  }
+}
+
+@media screen and (max-width: 848px) {
+  .column1{
+  margin-bottom: 150px;
+  }
+}
+
+@media screen and (max-width: 848px) {
+  .column{
+  margin-bottom: 150px;
+  }
+}
+
+@media screen and (max-width: 404px) {
+  .column{
+  margin-left: 80px;
+  }
+}
+@media screen and (max-width: 404px) {
+  .column{
+  width: 250px;
+  }
+}
+
+@media screen and (max-width: 404px) {
+  .column1{
+  margin-left: 80px;
+  }
+}
+@media screen and (max-width: 404px) {
+  .column1{
+  width: 250px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .column1{
+  margin-left: 60px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .column{
+  margin-left: 60px;
+  }
+}
+
+@media screen and (max-width: 699px) {
+  .footer{
+  height: 600px;
+  }
+}
+
+.text{
+  margin-left: 150px;
+  margin-right: 150px;
+  padding-bottom: 100px;
+}
+
+
+@media screen and (max-width: 915px) {
+  .text{
+  margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 905px) {
+  .text{
+  margin-top: 150px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .text{
+  margin-top: 250px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .text{
+  margin-top: 250px;
+  margin-left: 50px;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .text{
+  margin-top: 300px;
+  margin-left: 50px;
+  margin-right: 50px
+  }
+}
+
+@media screen and (max-width: 404px) {
+  .text{
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px
+  }
+}
+
+@media screen and (max-width: 411px) {
+  .column{
+margin-left: 50px;
+margin-bottom: 400px;
+  }
+}
+
+@media screen and (max-width: 411px) {
+  .column1{
+margin-left: 50px;
+margin-bottom: 400px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+ .footer .col{
+padding-left: 10px;
+padding-right: 10px;
+width: 250px;
+
+  }
+}
+
+
+
+@media screen and (max-width: 320px) {
+ .footer .col .social{
+padding-left: 150px;
+
+
+  }
+}
+
+
+.copyright-text{
+  text-align: center;
+  color: #f2f2f2;
+}
+
+
